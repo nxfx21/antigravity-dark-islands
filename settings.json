@@ -6,6 +6,7 @@
   "editor.lineHeight": 1.8,
   "workbench.tree.indent": 16,
   "workbench.tree.renderIndentGuides": "always",
+  "editor.minimap.showSlider": "always",
   "custom-ui-style.stylesheet": {
    ".monaco-workbench": {
       "background-color": "#121216 !important"
@@ -128,6 +129,13 @@
    ".tab:hover .label-name": {
       "text-shadow": "0 0 5px rgba(255,255,255,0.15) !important",
       "transition": "text-shadow 0.3s ease !important"
+   },
+   ".minimap canvas": {
+      "opacity": "0.6 !important",
+      "transition": "opacity 0.4s ease !important"
+   },
+   ".minimap:hover canvas": {
+      "opacity": "1 !important"
    },
    ".monaco-hover": {
       "border-radius": "12px !important",
@@ -312,6 +320,18 @@
    },
    ".notification-list-item-actions-container": {
       "border-radius": "8px !important"
+   },
+   ".notification-list-item": {
+      "border-radius": "14px !important",
+      "overflow": "hidden !important"
+   },
+   ".notification-list-item.focused": {
+      "border-radius": "14px !important",
+      "outline-offset": "-1px !important"
+   },
+   ".monaco-list-row:has(.notification-list-item)": {
+      "border-radius": "14px !important",
+      "overflow": "hidden !important"
    },
    ".part.auxiliarybar": {
       "margin": "8px 20px 0 8px",
