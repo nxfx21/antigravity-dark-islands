@@ -171,6 +171,17 @@
    ".viewpane-filter .monaco-inputbox": {
       "border-radius": "9999px !important"
    },
+   ".search-widget .monaco-inputbox": {
+      "border-radius": "9999px !important"
+   },
+   ".search-widget .replace-input .monaco-findInput": {
+      "width": "228px !important",
+      "height": "26px !important"
+   },
+   ".search-widget .search-container .monaco-findInput": {
+      "width": "228px !important",
+      "height": "26px !important"
+   },
    ".part.panel.bottom": {
       "margin": "0 8px",
       "border-radius": "14px",
