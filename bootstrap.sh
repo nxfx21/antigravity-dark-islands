@@ -28,7 +28,7 @@ echo "   Repository: $REPO_URL"
 rm -rf "$INSTALL_DIR"
 
 # Clone repository
-BRANCH="0.0.2"
+BRANCH="main"
 if ! git clone "$REPO_URL" "$INSTALL_DIR" --quiet --branch "$BRANCH"; then
     echo "❌ Failed to download Islands Dark"
     exit 1

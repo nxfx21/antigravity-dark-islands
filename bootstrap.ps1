@@ -10,7 +10,7 @@ echo "=========================================="
 echo ""
 
 $RepoUrl = "https://github.com/bwya77/vscode-dark-islands.git"
-$Branch = "0.0.2"
+$Branch = "main"
 $InstallDir = "$env:TEMP\islands-dark-temp"
 
 echo "📥 Step 1: Downloading Islands Dark..."
