@@ -3,13 +3,13 @@
 set -e
 
 # Islands Dark Theme Bootstrap Installer
-# One-liner: curl -fsSL https://raw.githubusercontent.com/bwya77/vscode-dark-islands/main/bootstrap.sh | bash
+# One-liner: curl -fsSL https://raw.githubusercontent.com/nxfx21/antigravity-dark-islands/main/bootstrap.sh | bash
 
 echo "🏝️  Islands Dark Theme Bootstrap Installer for Antigravity"
 echo "========================================================"
 echo ""
 
-REPO_URL="https://github.com/bwya77/vscode-dark-islands.git"
+REPO_URL="https://github.com/nxfx21/antigravity-dark-islands.git"
 INSTALL_DIR="$HOME/.islands-dark-temp"
 
 # Detect OS
