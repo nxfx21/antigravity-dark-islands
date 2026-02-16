@@ -188,52 +188,37 @@ If you previously used the **Custom CSS and JS Loader** extension (`be5invis.vsc
 
 ## Uninstalling
 
-To restore your VS Code to its previous state:
-
-### 1. Restore your old settings
-
-The installer backs up your previous settings to `settings.json.pre-islands-dark`. Restore it by copying it back:
-
-**macOS:**
-```bash
-cp ~/Library/Application\ Support/Code/User/settings.json.pre-islands-dark ~/Library/Application\ Support/Code/User/settings.json
-```
-
-**Linux:**
-```bash
-cp ~/.config/Code/User/settings.json.pre-islands-dark ~/.config/Code/User/settings.json
-```
-
-**Windows (PowerShell):**
-```powershell
-Copy-Item "$env:APPDATA\Code\User\settings.json.pre-islands-dark" "$env:APPDATA\Code\User\settings.json" -Force
-```
-
-### 2. Disable Custom UI Style
-
-1. Open **Command Palette** (`Cmd+Shift+P` / `Ctrl+Shift+P`)
-2. Run **Custom UI Style: Disable**
-3. VS Code will reload
-
-### 3. Remove the theme extension
-
-Delete the extension folder:
+Run the uninstall script to restore your VS Code to its previous state:
 
 **macOS/Linux:**
 ```bash
-rm -rf ~/.vscode/extensions/bwya77.islands-dark-1.0.0
+# If you still have the repo cloned:
+cd islands-dark
+./uninstall.sh
+
+# Or download and run directly:
+curl -fsSL https://raw.githubusercontent.com/bwya77/vscode-dark-islands/main/uninstall.sh | bash
 ```
 
 **Windows (PowerShell):**
 ```powershell
-Remove-Item -Recurse -Force "$env:USERPROFILE\.vscode\extensions\bwya77.islands-dark-1.0.0"
+# If you still have the repo cloned:
+cd islands-dark
+.\uninstall.ps1
+
+# Or download and run directly:
+irm https://raw.githubusercontent.com/bwya77/vscode-dark-islands/main/uninstall.ps1 | iex
 ```
 
-### 4. Change your color theme
+The uninstall script will:
+- Restore your previous settings from the `settings.json.pre-islands-dark` backup
+- Remove the Islands Dark theme extension
+- Unregister the extension from VS Code
 
-1. Open **Command Palette** (`Cmd+Shift+P` / `Ctrl+Shift+P`)
-2. Search for **Preferences: Color Theme**
-3. Select your preferred theme
+After running the script, you'll need to:
+1. Open **Command Palette** (`Cmd+Shift+P` / `Ctrl+Shift+P`) and run **Custom UI Style: Disable**
+2. Open **Command Palette** and search **Preferences: Color Theme** to select a new theme
+3. Reload VS Code
 
 ## Credits
 
