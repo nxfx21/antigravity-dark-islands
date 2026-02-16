@@ -7,7 +7,7 @@ Write-Host "Islands Dark Theme Bootstrap Installer for Antigravity" -ForegroundC
 Write-Host "======================================================" -ForegroundColor Cyan
 Write-Host ""
 
-$RepoUrl = "https://github.com/bwya77/vscode-dark-islands.git"
+$RepoUrl = "https://github.com/nxfx21/antigravity-dark-islands.git"
 $InstallDir = "$env:USERPROFILE\.islands-dark-temp"
 
 Write-Host "Step 1: Downloading Islands Dark..."
@@ -24,7 +24,7 @@ try {
     Write-Host "Downloaded successfully" -ForegroundColor Green
 } catch {
     Write-Host "Failed to download Islands Dark" -ForegroundColor Red
-    exit 1
+    exit 1z
 }
 
 Write-Host ""
