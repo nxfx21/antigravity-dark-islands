@@ -41,13 +41,13 @@ The fastest way to install:
 #### macOS/Linux
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/bwya77/vscode-dark-islands/main/bootstrap.sh | bash
+curl -fsSL https://raw.githubusercontent.com/nxfx21/antigravity-dark-islands/refs/heads/main/bootstrap.sh | bash
 ```
 
 #### Windows
 
 ```powershell
-irm https://raw.githubusercontent.com/bwya77/vscode-dark-islands/main/bootstrap.ps1 | iex
+irm https://raw.githubusercontent.com/nxfx21/antigravity-dark-islands/refs/heads/main/bootstrap.ps1 | iex
 ```
 
 ### Manual Clone Install
@@ -57,7 +57,7 @@ If you prefer to clone first:
 #### macOS/Linux
 
 ```bash
-git clone https://github.com/bwya77/vscode-dark-islands.git islands-dark
+https://github.com/nxfx21/antigravity-dark-islands.git islands-dark
 cd islands-dark
 ./install.sh
 ```
@@ -65,7 +65,7 @@ cd islands-dark
 #### Windows
 
 ```powershell
-git clone https://github.com/bwya77/vscode-dark-islands.git islands-dark
+git clone https://github.com/nxfx21/antigravity-dark-islands.git islands-dark
 cd islands-dark
 .\install.ps1
 ```
@@ -88,7 +88,7 @@ If you prefer to install manually, follow these steps:
 Clone this repo and copy the extension files:
 
 ```bash
-git clone https://github.com/bwya77/vscode-dark-islands.git islands-dark
+git clone https://github.com/nxfx21/antigravity-dark-islands.git
 cd islands-dark
 mkdir -p ~/.antigravity/extensions/bwya77.islands-dark-1.0.0
 cp package.json ~/.antigravity/extensions/bwya77.islands-dark-1.0.0/
@@ -97,7 +97,7 @@ cp -r themes ~/.antigravity/extensions/bwya77.islands-dark-1.0.0/
 
 On Windows (PowerShell):
 ```powershell
-git clone https://github.com/bwya77/vscode-dark-islands.git islands-dark
+git clone https://github.com/nxfx21/antigravity-dark-islands.git islands-dark
 cd islands-dark
 $ext = "$env:USERPROFILE\.antigravity\extensions\bwya77.islands-dark-1.0.0"
 New-Item -ItemType Directory -Path $ext -Force
