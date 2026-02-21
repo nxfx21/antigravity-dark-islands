@@ -33,7 +33,7 @@ echo "📦 Step 1: Installing Islands Dark theme extension..."
 
 # Install by copying to Antigravity extensions directory
 # Assuming .antigravity structure mirrors .vscode
-EXT_DIR="$HOME/.antigravity/extensions/bwya77.islands-dark-1.0.0"
+EXT_DIR="$HOME/.antigravity/extensions/nxfx21.islands-dark-1.0.0"
 rm -rf "$EXT_DIR"
 mkdir -p "$EXT_DIR"
 cp "$SCRIPT_DIR/package.json" "$EXT_DIR/"

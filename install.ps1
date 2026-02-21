@@ -47,7 +47,7 @@ Write-Host ""
 Write-Host "Step 1: Installing Islands Dark theme extension..."
 
 # Install by copying to Antigravity extensions directory
-$extDir = "$env:USERPROFILE\.antigravity\extensions\bwya77.islands-dark-1.0.0"
+$extDir = "$env:USERPROFILE\.antigravity\extensions\nxfx21.islands-dark-1.0.0"
 if (Test-Path $extDir) {
     Remove-Item -Recurse -Force $extDir
 }

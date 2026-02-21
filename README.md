@@ -1,12 +1,11 @@
 # Islands Dark
 
-<a href="https://www.buymeacoffee.com/bwya77" style="margin-right: 10px;">
+<a href="https://www.buymeacoffee.com/nxfx21" style="margin-right: 10px;">
     <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" />
 </a>
-<a href="https://github.com/sponsors/bwya77">
+<a href="https://github.com/sponsors/nxfx21">
     <img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA" />
 </a>
-
 
 ## **THIS THEME IS STILL A WORK IN PROGRESS**
 
@@ -71,6 +70,7 @@ cd islands-dark
 ```
 
 The scripts will automatically:
+
 - ✅ Install the Islands Dark theme extension
 - ✅ Install the Custom UI Style extension
 - ✅ Install Bear Sans UI fonts
@@ -90,16 +90,17 @@ Clone this repo and copy the extension files:
 ```bash
 git clone https://github.com/nxfx21/antigravity-dark-islands.git
 cd islands-dark
-mkdir -p ~/.antigravity/extensions/bwya77.islands-dark-1.0.0
-cp package.json ~/.antigravity/extensions/bwya77.islands-dark-1.0.0/
-cp -r themes ~/.antigravity/extensions/bwya77.islands-dark-1.0.0/
+mkdir -p ~/.antigravity/extensions/nxfx21.islands-dark-1.0.0
+cp package.json ~/.antigravity/extensions/nxfx21.islands-dark-1.0.0/
+cp -r themes ~/.antigravity/extensions/nxfx21.islands-dark-1.0.0/
 ```
 
 On Windows (PowerShell):
+
 ```powershell
 git clone https://github.com/nxfx21/antigravity-dark-islands.git islands-dark
 cd islands-dark
-$ext = "$env:USERPROFILE\.antigravity\extensions\bwya77.islands-dark-1.0.0"
+$ext = "$env:USERPROFILE\.antigravity\extensions\nxfx21.islands-dark-1.0.0"
 New-Item -ItemType Directory -Path $ext -Force
 Copy-Item package.json $ext\
 Copy-Item themes $ext\themes -Recurse
@@ -131,6 +132,7 @@ This theme uses two fonts:
 - **Bear Sans UI** — used in the sidebar, tabs, command center, and status bar (included in `fonts/` folder)
 
 To install Bear Sans UI:
+
 1. Open the `fonts/` folder in this repo
 2. Select all `.otf` files and double-click to open in Font Book (macOS) or right-click > Install (Windows)
 
@@ -156,36 +158,40 @@ Copy the contents of `settings.json` from this repo into your Antigravity settin
 
 ## What the CSS customizations do
 
-| Element | Effect |
-|---------|--------|
-| **Canvas** | Deep dark background (`#131217`) behind all panels |
-| **Sidebar** | Floating with 24px rounded corners, glass borders, drop shadow |
-| **Editor** | Floating with 24px rounded corners, glass borders, browser-tab effect |
-| **Activity bar** | Pill-shaped with glass inset shadows, circular selection indicator |
-| **Command center** | Pill-shaped with glass effect |
-| **Bottom panel** | Floating with 14px rounded corners, glass borders |
-| **Right sidebar** | Floating with 24px rounded corners, glass borders |
-| **Notifications** | 14px rounded corners, glass borders, deep drop shadow |
-| **Command palette** | 16px rounded corners, glass borders, rounded list rows |
-| **Scrollbars** | Pill-shaped thumbs with fade transition |
-| **Tabs** | Browser-tab style (active tab open at bottom), close button fades in on hover |
-| **Breadcrumbs** | Hidden until hover with smooth fade transition |
-| **Status bar** | Dimmed text that brightens on hover |
-| **File icons** | Color-matched glow via drop-shadow (best with Seti Folder icon theme) |
+| Element             | Effect                                                                        |
+| ------------------- | ----------------------------------------------------------------------------- |
+| **Canvas**          | Deep dark background (`#131217`) behind all panels                            |
+| **Sidebar**         | Floating with 24px rounded corners, glass borders, drop shadow                |
+| **Editor**          | Floating with 24px rounded corners, glass borders, browser-tab effect         |
+| **Activity bar**    | Pill-shaped with glass inset shadows, circular selection indicator            |
+| **Command center**  | Pill-shaped with glass effect                                                 |
+| **Bottom panel**    | Floating with 14px rounded corners, glass borders                             |
+| **Right sidebar**   | Floating with 24px rounded corners, glass borders                             |
+| **Notifications**   | 14px rounded corners, glass borders, deep drop shadow                         |
+| **Command palette** | 16px rounded corners, glass borders, rounded list rows                        |
+| **Scrollbars**      | Pill-shaped thumbs with fade transition                                       |
+| **Tabs**            | Browser-tab style (active tab open at bottom), close button fades in on hover |
+| **Breadcrumbs**     | Hidden until hover with smooth fade transition                                |
+| **Status bar**      | Dimmed text that brightens on hover                                           |
+| **File icons**      | Color-matched glow via drop-shadow (best with Seti Folder icon theme)         |
 
 ## Troubleshooting
 
 ### Changes aren't taking effect
+
 Try disabling and re-enabling Custom UI Style:
+
 1. **Command Palette** > **Custom UI Style: Disable**
 2. Reload Antigravity
 3. **Command Palette** > **Custom UI Style: Enable**
 4. Reload Antigravity
 
 ### "Corrupt installation" warning
+
 This is expected after enabling Custom UI Style. Dismiss it or select **Don't Show Again**.
 
 ### Previously used "Custom CSS and JS Loader" extension
+
 If you previously used the **Custom CSS and JS Loader** extension (`be5invis.vscode-custom-css`), it may have injected CSS directly into Antigravity's `workbench.html` that persists even after disabling. If styles conflict, reinstall Antigravity to get a clean `workbench.html`, then use only **Custom UI Style**.
 
 ## Credits

@@ -1,5 +1,5 @@
 # Islands Dark Theme Bootstrap Installer for Antigravity
-# One-liner: irm https://raw.githubusercontent.com/bwya77/vscode-dark-islands/main/bootstrap.ps1 | iex
+# One-liner: irm https://raw.githubusercontent.com/nxfx21/antigravity-dark-islands/main/bootstrap.ps1 | iex
 
 $ErrorActionPreference = "Stop"
 
