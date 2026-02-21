@@ -1,8 +1,8 @@
 {
   "name": "islands-dark",
   "displayName": "Islands Dark",
-  "description": "A dark color theme for Antigravity inspired by JetBrains Islands Dark — deep backgrounds, warm syntax highlighting, and a clean modern aesthetic.",
-  "version": "1.0.0",
+  "description": "A dark color theme inspired by JetBrains Islands Dark — deep backgrounds, warm syntax highlighting, and a clean modern aesthetic.",
+  "version": "0.0.2",
   "publisher": "nxfx21",
   "license": "MIT",
   "engines": {

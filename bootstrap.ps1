@@ -8,7 +8,8 @@ Write-Host "======================================================" -ForegroundC
 Write-Host ""
 
 $RepoUrl = "https://github.com/nxfx21/antigravity-dark-islands.git"
-$InstallDir = "$env:USERPROFILE\.islands-dark-temp"
+$Branch = "main"
+$InstallDir = "$env:TEMP\islands-dark-temp"
 
 Write-Host "Step 1: Downloading Islands Dark..."
 Write-Host "   Repository: $RepoUrl"
@@ -20,7 +21,7 @@ if (Test-Path $InstallDir) {
 
 # Clone repository
 try {
-    git clone "$RepoUrl" "$InstallDir" --quiet
+    git clone $RepoUrl $InstallDir --quiet --branch $Branch
     Write-Host "Downloaded successfully" -ForegroundColor Green
 } catch {
     Write-Host "Failed to download Islands Dark" -ForegroundColor Red
