@@ -1,11 +1,7 @@
 # Islands Dark
 
-<a href="https://www.buymeacoffee.com/nxfx21" style="margin-right: 10px;">
-    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" />
-</a>
-<a href="https://github.com/sponsors/nxfx21">
-    <img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA" />
-</a>
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/nxfx21)
+[![Sponsor](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://github.com/sponsors/nxfx21)
 
 ## **THIS THEME IS STILL A WORK IN PROGRESS**
 
@@ -57,7 +53,7 @@ irm https://raw.githubusercontent.com/nxfx21/antigravity-dark-islands/refs/heads
 
 If you prefer to clone first:
 
-#### macOS/Linux
+#### Clone on macOS/Linux
 
 ```bash
 https://github.com/nxfx21/antigravity-dark-islands.git islands-dark
@@ -65,7 +61,7 @@ cd islands-dark
 ./install.sh
 ```
 
-#### Windows
+#### Clone on Windows
 
 ```powershell
 git clone https://github.com/nxfx21/antigravity-dark-islands.git islands-dark
