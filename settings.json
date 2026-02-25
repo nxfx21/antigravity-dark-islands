@@ -15,8 +15,8 @@
       "--islands-item-radius": "6px",
       "--islands-panel-gap": "6px",
       "--islands-panel-top": "6px",
-      "--islands-bg-canvas": "#121518",
-      "--islands-bg-surface": "#191d21",
+      "--islands-bg-canvas": "#121216",
+      "--islands-bg-surface": "#181a1d",
       "background-color": "var(--islands-bg-canvas) !important"
    },
    ".part.sidebar": {
@@ -118,12 +118,12 @@
    },
    ".editor-actions": {
       "padding-right": "20px !important",
-      "background-image": "linear-gradient(to top, #2a2d34 1px, transparent 1px) !important",
+      "background-image": "linear-gradient(to top, #25262a 1px, transparent 1px) !important",
       "background-repeat": "no-repeat !important",
       "background-position": "bottom !important"
    },
    ".tabs-container": {
-      "background-image": "linear-gradient(to top, #2a2d34 1px, transparent 1px) !important",
+      "background-image": "linear-gradient(to top, #25262a 1px, transparent 1px) !important",
       "background-repeat": "no-repeat !important",
       "background-position": "bottom !important"
    },
@@ -139,14 +139,14 @@
       "border-radius": "50% !important"
    },
    ".tab.active": {
-      "box-shadow": "inset -1px 0 0 0 #2a2d34, inset 1px 0 0 0 #2a2d34 !important",
+      "box-shadow": "inset -1px 0 0 0 #25262a, inset 1px 0 0 0 #25262a !important",
       "border-right": "none !important"
    },
    ".tab:not(.active)": {
-      "box-shadow": "inset 0 -1px 0 0 #2a2d34 !important"
+      "box-shadow": "inset 0 -1px 0 0 #25262a !important"
    },
    ".tab.active:first-child": {
-      "box-shadow": "inset -1px 0 0 0 #2a2d34 !important"
+      "box-shadow": "inset -1px 0 0 0 #25262a !important"
    },
    ".tab:hover .label-name": {
       "text-shadow": "0 0 5px rgba(255,255,255,0.15) !important",
