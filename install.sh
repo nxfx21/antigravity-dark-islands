@@ -2,6 +2,7 @@
 
 set -e
 
+
 echo "🏝️  Islands Dark Theme Installer for macOS/Linux"
 echo "================================================"
 echo ""
@@ -43,46 +44,6 @@ if [ -d "$EXT_DIR/themes" ]; then
 else
     echo -e "${RED}❌ Failed to install theme extension${NC}"
     exit 1
-fi
-
-# Register extension in extensions.json so VS Code discovers it
-EXT_JSON="$HOME/.vscode/extensions/extensions.json"
-if command -v node &> /dev/null; then
-    node << 'REGISTER_SCRIPT'
-const fs = require('fs');
-const path = require('path');
-
-const extJsonPath = path.join(process.env.HOME, '.vscode', 'extensions', 'extensions.json');
-let extensions = [];
-if (fs.existsSync(extJsonPath)) {
-    try {
-        extensions = JSON.parse(fs.readFileSync(extJsonPath, 'utf8'));
-    } catch (e) {
-        extensions = [];
-    }
-}
-
-// Remove any existing Islands Dark entry
-extensions = extensions.filter(e =>
-    e.identifier?.id !== 'bwya77.islands-dark' &&
-    e.identifier?.id !== 'your-publisher-name.islands-dark'
-);
-
-// Add new entry
-extensions.push({
-    identifier: { id: 'bwya77.islands-dark' },
-    version: '1.0.0',
-    location: {
-        '$mid': 1,
-        path: path.join(process.env.HOME, '.vscode', 'extensions', 'bwya77.islands-dark-1.0.0'),
-        scheme: 'file'
-    },
-    relativeLocation: 'bwya77.islands-dark-1.0.0'
-});
-
-fs.writeFileSync(extJsonPath, JSON.stringify(extensions));
-REGISTER_SCRIPT
-    echo -e "${GREEN}✓ Extension registered${NC}"
 fi
 
 echo ""

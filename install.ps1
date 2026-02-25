@@ -62,39 +62,6 @@ if (Test-Path "$extDir\themes") {
     exit 1
 }
 
-# Register extension in extensions.json so VS Code discovers it
-$extJsonPath = "$env:USERPROFILE\.vscode\extensions\extensions.json"
-try {
-    $extensions = @()
-    if (Test-Path $extJsonPath) {
-        $extensions = Get-Content $extJsonPath -Raw | ConvertFrom-Json
-    }
-
-    # Remove any existing Islands Dark entry
-    $extensions = @($extensions | Where-Object {
-        $_.identifier.id -ne 'bwya77.islands-dark' -and
-        $_.identifier.id -ne 'your-publisher-name.islands-dark'
-    })
-
-    # Add new entry
-    $newEntry = [PSCustomObject]@{
-        identifier = [PSCustomObject]@{ id = 'bwya77.islands-dark' }
-        version = '1.0.0'
-        location = [PSCustomObject]@{
-            '$mid' = 1
-            path = "$env:USERPROFILE\.vscode\extensions\bwya77.islands-dark-1.0.0"
-            scheme = 'file'
-        }
-        relativeLocation = 'bwya77.islands-dark-1.0.0'
-    }
-    $extensions += $newEntry
-
-    $extensions | ConvertTo-Json -Depth 10 -Compress | Set-Content $extJsonPath
-    Write-Host "Extension registered" -ForegroundColor Green
-} catch {
-    Write-Host "Could not register extension automatically" -ForegroundColor Yellow
-}
-
 Write-Host ""
 Write-Host "Step 2: Installing Custom UI Style extension..."
 try {
