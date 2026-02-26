@@ -2,3 +2,5 @@
 *.vsix
 node_modules/
 result/
+.islands_dark_first_run
+.islands_dark_first_run_antigravity
