@@ -57,7 +57,8 @@ Copy-Item "$scriptDir\themes" "$extDir\themes" -Recurse -Force
 
 if (Test-Path "$extDir\themes") {
     Write-Host "Theme extension installed to $extDir" -ForegroundColor Green
-} else {
+}
+else {
     Write-Host "Failed to install theme extension" -ForegroundColor Red
     exit 1
 }
@@ -80,17 +81,17 @@ try {
 
     # Remove any existing Islands Dark entry
     $extensions = @($extensions | Where-Object {
-        $_.identifier.id -ne 'nxfx21.islands-dark' -and
-        $_.identifier.id -ne 'your-publisher-name.islands-dark'
-    })
+            $_.identifier.id -ne 'nxfx21.islands-dark' -and
+            $_.identifier.id -ne 'your-publisher-name.islands-dark'
+        })
 
     # Add new entry
     $newEntry = [PSCustomObject]@{
-        identifier = [PSCustomObject]@{ id = 'nxfx21.islands-dark' }
-        version = '1.0.0'
-        location = [PSCustomObject]@{
+        identifier       = [PSCustomObject]@{ id = 'nxfx21.islands-dark' }
+        version          = '1.0.0'
+        location         = [PSCustomObject]@{
             '$mid' = 1
-            path = "$env:USERPROFILE\.antigravity\extensions\nxfx21.islands-dark-1.0.0"
+            path   = "$env:USERPROFILE\.antigravity\extensions\nxfx21.islands-dark-1.0.0"
             scheme = 'file'
         }
         relativeLocation = 'nxfx21.islands-dark-1.0.0'
@@ -99,17 +100,18 @@ try {
 
     $extensions | ConvertTo-Json -Depth 10 -Compress | Set-Content $extJsonPath
     Write-Host "Extension registered" -ForegroundColor Green
-} catch {
-    Write-Host "Could not register extension automatically" -ForegroundColor Yellow
 }
+catch {
+    Write-Host "Could not register extension automatically" -ForegroundColor Yellow
 }
 
 Write-Host ""
 Write-Host "Step 2: Installing Custom UI Style extension..."
 try {
-    $output = agy --install-extension subframe7536.custom-ui-style --force 2>&1
+    agy --install-extension subframe7536.custom-ui-style --force 2>&1 | Out-Null
     Write-Host "Custom UI Style extension installed" -ForegroundColor Green
-} catch {
+}
+catch {
     Write-Host "Could not install Custom UI Style extension automatically" -ForegroundColor Yellow
     Write-Host "   Please install it manually from the Extensions marketplace"
 }
@@ -128,14 +130,16 @@ try {
     foreach ($font in $fonts) {
         try {
             Copy-Item $font.FullName $fontDir -Force -ErrorAction SilentlyContinue
-        } catch {
+        }
+        catch {
             # Silently continue if copy fails
         }
     }
 
     Write-Host "Fonts installed" -ForegroundColor Green
     Write-Host "   Note: You may need to restart applications to use the new fonts" -ForegroundColor DarkGray
-} catch {
+}
+catch {
     Write-Host "Could not install fonts automatically" -ForegroundColor Yellow
     Write-Host "   Please manually install the fonts from the 'fonts/' folder"
     Write-Host "   Select all .otf files and right-click > Install"
