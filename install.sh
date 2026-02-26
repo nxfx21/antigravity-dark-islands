@@ -75,7 +75,7 @@ if (fs.existsSync(extJsonPath)) {
 // Remove any existing Islands Dark entry
 extensions = extensions.filter(e =>
     e.identifier?.id !== 'nxfx21.islands-dark' &&
-    e.identifier?.id !== 'your-publisher-name.islands-dark'
+    e.identifier?.id !== 'bwya77.islands-dark'
 );
 
 // Add new entry

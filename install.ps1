@@ -82,7 +82,7 @@ try {
     # Remove any existing Islands Dark entry
     $extensions = @($extensions | Where-Object {
             $_.identifier.id -ne 'nxfx21.islands-dark' -and
-            $_.identifier.id -ne 'your-publisher-name.islands-dark'
+            $_.identifier.id -ne 'bwya77.islands-dark'
         })
 
     # Add new entry

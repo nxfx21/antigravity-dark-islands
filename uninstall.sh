@@ -14,9 +14,9 @@ NC='\033[0m' # No Color
 
 # Step 1: Restore old settings
 echo "⚙️  Step 1: Restoring Antigravity settings..."
-SETTINGS_DIR="$HOME/.config/Code/User"
+SETTINGS_DIR="$HOME/.config/antigravity/User"
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    SETTINGS_DIR="$HOME/Library/Application Support/Code/User"
+    SETTINGS_DIR="$HOME/Library/Application Support/Antigravity/User"
 fi
 
 SETTINGS_FILE="$SETTINGS_DIR/settings.json"
@@ -65,7 +65,7 @@ if (fs.existsSync(extJsonPath)) {
         const before = extensions.length;
         extensions = extensions.filter(e =>
             e.identifier?.id !== 'nxfx21.islands-dark' &&
-            e.identifier?.id !== 'your-publisher-name.islands-dark'
+            e.identifier?.id !== 'bwya77.islands-dark'
         );
         if (extensions.length < before) {
             fs.writeFileSync(extJsonPath, JSON.stringify(extensions));

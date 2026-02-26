@@ -10,7 +10,7 @@ Write-Host ""
 
 # Step 1: Restore old settings
 Write-Host "Step 1: Restoring Antigravity settings..."
-$settingsDir = "$env:APPDATA\Code\User"
+$settingsDir = "$env:APPDATA\antigravity\User"
 $settingsFile = Join-Path $settingsDir "settings.json"
 $backupFile = "$settingsFile.pre-islands-dark"
 
@@ -18,7 +18,8 @@ if (Test-Path $backupFile) {
     Copy-Item $backupFile $settingsFile -Force
     Write-Host "Settings restored from backup" -ForegroundColor Green
     Write-Host "   Backup file: $backupFile"
-} else {
+}
+else {
     Write-Host "No backup found at $backupFile" -ForegroundColor Yellow
     Write-Host "   You may need to manually update your Antigravity settings."
 }
@@ -38,7 +39,8 @@ $extDir = "$env:USERPROFILE\.antigravity\extensions\nxfx21.islands-dark-1.0.0"
 if (Test-Path $extDir) {
     Remove-Item -Recurse -Force $extDir
     Write-Host "Theme extension removed" -ForegroundColor Green
-} else {
+}
+else {
     Write-Host "Extension directory not found (may already be removed)" -ForegroundColor Yellow
 }
 
@@ -51,17 +53,19 @@ try {
         $extensions = Get-Content $extJsonPath -Raw | ConvertFrom-Json
         $before = $extensions.Count
         $extensions = @($extensions | Where-Object {
-            $_.identifier.id -ne 'nxfx21.islands-dark' -and
-            $_.identifier.id -ne 'your-publisher-name.islands-dark'
-        })
+                $_.identifier.id -ne 'nxfx21.islands-dark' -and
+                $_.identifier.id -ne 'bwya77.islands-dark'
+            })
         if ($extensions.Count -lt $before) {
             $extensions | ConvertTo-Json -Depth 10 -Compress | Set-Content $extJsonPath
             Write-Host "Extension unregistered" -ForegroundColor Green
-        } else {
+        }
+        else {
             Write-Host "Extension was not registered" -ForegroundColor Yellow
         }
     }
-} catch {
+}
+catch {
     Write-Host "Could not update extensions.json" -ForegroundColor Yellow
 }
 
