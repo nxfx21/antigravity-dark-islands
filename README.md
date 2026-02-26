@@ -11,7 +11,7 @@ A dark color theme for Antigravity inspired by the easemate IDE. Features floati
 - [easemate Nav](https://x.com/Jakubantalik/status/1952672176450215944)
 - [easemate effects](https://x.com/aaroniker/status/1989727838992539655)
 
-![Islands Dark Screenshot](assets/CleanShot%202026-02-14%20at%2021.47.05@2x.png)
+![Islands Dark Screenshot](assets/CleanShot%202026-02-19%20at%2019.37.59@2x.png)
 
 ## Features
 
@@ -78,6 +78,36 @@ The scripts will automatically:
 - ✅ Enable Custom UI Style and reload Antigravity
 
 > **Note:** IBM Plex Mono and FiraCode Nerd Font Mono must be installed separately (the script will remind you).
+
+### Nix Flake Install
+
+If you use Nix, you can run a pre-configured instance of VS Code (or VSCodium) with the theme, extensions, and fonts already bundled.
+
+To run it directly without installing:
+
+```bash
+# Run VS Code
+nix run github:nxfx21/antigravity-dark-islands#vscode
+
+# Or run VSCodium
+nix run github:nxfx21/antigravity-dark-islands#vscodium
+```
+
+To use it in your NixOS or Home Manager configuration, add it to your flake inputs:
+
+```nix
+{
+  inputs.islands-dark.url = "github:nxfx21/antigravity-dark-islands";
+
+  outputs = { self, nixpkgs, islands-dark, ... }: {
+    # Then you can add and use it:
+    # islands-dark.packages.${pkgs.stdenv.hostPlatform.system}.vscode
+    # islands-dark.packages.${pkgs.stdenv.hostPlatform.system}.vscodium
+  };
+}
+```
+
+> **Note:** The Nix flake automatically includes the **Custom UI Style** extension, **Seti Folder** icon theme, and all required fonts (**Bear Sans UI**, **IBM Plex Mono**, and **FiraCode Nerd Font**). It will also copy the recommended `settings.json` on the first run.
 
 ### Manual Installation
 

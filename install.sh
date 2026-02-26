@@ -2,6 +2,7 @@
 
 set -e
 
+
 echo "🏝️  Islands Dark Theme Installer for macOS/Linux"
 echo "================================================ட்டான"
 echo ""
@@ -48,6 +49,14 @@ fi
 
 # Register extension in extensions.json so Antigravity discovers it
 EXT_JSON="$HOME/.antigravity/extensions/extensions.json"
+
+# Remove extensions.json so Antigravity rebuilds it cleanly on next launch
+# (incorporating upstream fix to prevent invalid state)
+if [ -f "$EXT_JSON" ]; then
+    rm -f "$EXT_JSON"
+    echo -e "${GREEN}✓ Cleared extensions.json (Antigravity will rebuild it)${NC}"
+fi
+
 if command -v node &> /dev/null; then
     node << 'REGISTER_SCRIPT'
 const fs = require('fs');
@@ -84,6 +93,7 @@ extensions.push({
 fs.writeFileSync(extJsonPath, JSON.stringify(extensions));
 REGISTER_SCRIPT
     echo -e "${GREEN}✓ Extension registered${NC}"
+fi
 fi
 
 echo ""

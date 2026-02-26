@@ -64,6 +64,14 @@ if (Test-Path "$extDir\themes") {
 
 # Register extension in extensions.json so Antigravity discovers it
 $extJsonPath = "$env:USERPROFILE\.antigravity\extensions\extensions.json"
+
+# Remove extensions.json so Antigravity rebuilds it cleanly on next launch
+# (incorporating upstream fix to prevent invalid state)
+if (Test-Path $extJsonPath) {
+    Remove-Item $extJsonPath -Force
+    Write-Host "Cleared extensions.json (Antigravity will rebuild it)" -ForegroundColor Green
+}
+
 try {
     $extensions = @()
     if (Test-Path $extJsonPath) {
@@ -93,6 +101,7 @@ try {
     Write-Host "Extension registered" -ForegroundColor Green
 } catch {
     Write-Host "Could not register extension automatically" -ForegroundColor Yellow
+}
 }
 
 Write-Host ""
@@ -174,18 +183,21 @@ Write-Host "   Applying CSS customizations..."
 
 Write-Host ""
 Write-Host "Islands Dark theme has been installed!" -ForegroundColor Green
-Write-Host "   Antigravity will now reload to apply the custom UI style."
+Write-Host "   Antigravity will now restart to apply the custom UI style."
 Write-Host ""
 
-# Reload Antigravity
-Write-Host "   Reloading Antigravity..." -ForegroundColor Cyan
-try {
-    agy --reload-window 2>$null
-} catch {
-    agy $scriptDir 2>$null
-}
+# Quit Antigravity and relaunch so Custom UI Style fully initializes and patches CSS
+Write-Host "   Closing Antigravity..." -ForegroundColor Cyan
+Stop-Process -Name "Antigravity" -Force -ErrorAction SilentlyContinue
+Start-Sleep -Seconds 3
+
+Write-Host "   Relaunching Antigravity..." -ForegroundColor Cyan
+Start-Process "agy" -ErrorAction SilentlyContinue
 
 Write-Host ""
 Write-Host "Done!" -ForegroundColor Green
+Write-Host ""
+Write-Host "If the CSS customizations are not applied, open the Command Palette" -ForegroundColor Yellow
+Write-Host "(Ctrl+Shift+P) and run: Custom UI Style: Reload" -ForegroundColor Yellow
 
 Start-Sleep -Seconds 3
